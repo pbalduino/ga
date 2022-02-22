@@ -2,14 +2,6 @@ $(function(){
   var $lastClicked;
 
   function onTarefaDeleteClick() {
-    const text = $(this)
-      .parent('.tarefa-item')
-      .get(0)
-      .getChildren();
-
-    console.log("onTarefaDelete", text, gtag);
-    gtag("event", "delete_task", text);
-
     $(this).parent('.tarefa-item')
       .unbind('click')
       .hide('slow', function() {
@@ -18,8 +10,6 @@ $(function(){
   }
 
   function addTarefa(text) {
-    gtag("event", "add_task", {text: text});
-
     var $tarefa = $("<div />")
                   .addClass("tarefa-item")
                   .append($("<div />")
