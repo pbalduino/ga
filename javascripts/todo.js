@@ -2,7 +2,7 @@ $(function(){
   var $lastClicked;
 
   function onTarefaDeleteClick() {
-//    console.log("onTarefaDelete", $(this).parent('.tarefa-item'));
+    console.log("onTarefaDelete", $(this).parent('.tarefa-item'));
     gtag("event", "delete_task", {});
 
     $(this).parent('.tarefa-item')
