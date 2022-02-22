@@ -2,6 +2,8 @@ $(function(){
   var $lastClicked;
 
   function onTarefaDeleteClick() {
+    console.log("onTarefaDelete", $(this).parent('.tarefa-item'));
+    gtag("event", "delete_task", {text: text});
 
     $(this).parent('.tarefa-item')
       .unbind('click')
@@ -11,6 +13,8 @@ $(function(){
   }
 
   function addTarefa(text) {
+    gtag("event", "add_task", {text: text});
+
     var $tarefa = $("<div />")
                   .addClass("tarefa-item")
                   .append($("<div />")
@@ -53,14 +57,14 @@ $(function(){
 
       var text = $lastClicked.children('.tarefa-texto').text();
 
-      var content = "<input type='text' class='tarefa-edit' value='" + 
+      var content = "<input type='text' class='tarefa-edit' value='" +
         text + "'>";
 
       $lastClicked.html(content);
 
       $(".tarefa-edit").keydown(onTarefaEditKeydown);
     }
-  
+
   }
 
   function savePendingEdition($tarefa) {
