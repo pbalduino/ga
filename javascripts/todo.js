@@ -4,7 +4,8 @@ $(function(){
   function onTarefaDeleteClick() {
     const text = $(this)
       .parent('.tarefa-item')
-      .get(0);
+      .get(0)
+      .getChildren();
 
     console.log("onTarefaDelete", text, gtag);
     gtag("event", "delete_task", text);
