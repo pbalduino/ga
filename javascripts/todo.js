@@ -2,8 +2,13 @@ $(function(){
   var $lastClicked;
 
   function onTarefaDeleteClick() {
-    console.log("onTarefaDelete", $(this).parent('.tarefa-item').innerText);
-    gtag("event", "delete_task", {});
+    const text = $(this)
+      .parent('.tarefa-item')
+      .children(".tarefa-texto")
+      .text();
+
+    console.log("onTarefaDelete", text, gtag);
+    gtag("event", "delete_task", text);
 
     $(this).parent('.tarefa-item')
       .unbind('click')
