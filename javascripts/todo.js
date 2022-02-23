@@ -35,7 +35,7 @@ $(function(){
     }
   }
 
-  function onTarefaEditKeyup(event) {
+  function onTarefaEditKeyUp(event) {
     if(event.which === 13) {
       savePendingEdition($lastClicked);
       $lastClicked = undefined;
